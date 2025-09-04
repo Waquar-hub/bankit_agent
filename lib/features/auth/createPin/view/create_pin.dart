@@ -6,7 +6,6 @@ import '../../../../utils/app_button.dart';
 import '../../../../core/app_colors.dart';
 import '../../../../core/image_path.dart';
 import '../../../../utils/app_field.dart';
-
 class CreatePin extends StatefulWidget {
   final bool createPin;
   const CreatePin({super.key,required this.createPin});
