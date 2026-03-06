@@ -20,9 +20,7 @@ class App extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         return MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (_) => sl<LoginEmailBloc>()),
-          ],
+          providers: [BlocProvider(create: (_) => sl<LoginEmailBloc>())],
           child: MaterialApp.router(
             routerConfig: AppRouter.router,
             debugShowCheckedModeBanner: false,
@@ -30,14 +28,15 @@ class App extends StatelessWidget {
             theme: ThemeData(
               iconTheme: IconThemeData(color: Colors.white),
               checkboxTheme: CheckboxThemeData(
-                fillColor: MaterialStateProperty.all(Colors.blue),
-                checkColor: MaterialStateProperty.all(Colors.white),
-                overlayColor: MaterialStateProperty.all(
-                    Colors.blue.withOpacity(0.2)), // ripple effect
+                fillColor: WidgetStateProperty.all(Colors.blue),
+                checkColor: WidgetStateProperty.all(Colors.white),
+                overlayColor: WidgetStateProperty.all(
+                  Colors.blue.withOpacity(0.2),
+                ), // ripple effect
               ),
               appBarTheme: AppBarTheme(
-                  titleTextStyle: AppStyle.h4,
-                  color: AppColors.base
+                titleTextStyle: AppStyle.h4,
+                backgroundColor: AppColors.base,
               ),
               colorScheme: ColorScheme.fromSeed(seedColor: AppColors.base),
             ),
